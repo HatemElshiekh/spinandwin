@@ -14,11 +14,10 @@
   color-scheme: light;
 }
 
-/* Museo Sans: drop the licensed woff2 files into public/fonts and uncomment.
+/* Museo Sans, licensed by Gulf Cryo. The 500 file also serves normal (400) text. */
 @font-face { font-family: "Museo Sans"; src: url("/fonts/MuseoSans-300.woff2") format("woff2"); font-weight: 300; font-display: swap; }
-@font-face { font-family: "Museo Sans"; src: url("/fonts/MuseoSans-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
-@font-face { font-family: "Museo Sans"; src: url("/fonts/MuseoSans-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
-*/
+@font-face { font-family: "Museo Sans"; src: url("/fonts/MuseoSans-500.woff2") format("woff2"); font-weight: 400 500; font-display: swap; }
+@font-face { font-family: "Museo Sans"; src: url("/fonts/MuseoSans-700.woff2") format("woff2"); font-weight: 600 900; font-display: swap; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
