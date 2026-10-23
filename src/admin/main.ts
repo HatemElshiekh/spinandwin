@@ -241,7 +241,7 @@ async function renderControls() {
   const manager = me?.role === 'manager';
   view().innerHTML = `<section class="panel">
     <h2>Pause switch</h2>
-    <p>${o.paused ? 'The challenge is <strong>paused</strong>. New visitors see a closed message. Visitors already playing can finish.'
+    <p>${o.paused ? 'The challenge is <strong>paused</strong>. Visitors who have not started see a closed message. Visitors already playing can finish.'
       : 'The challenge is <strong>open</strong>. Pause it when the QR stand is removed or in an emergency.'}</p>
     <button class="btn ${o.paused ? '' : 'danger'}" id="pause">${o.paused ? 'Resume the challenge' : 'Pause the challenge'}</button>
   </section>
@@ -268,7 +268,7 @@ async function renderControls() {
 
   document.getElementById('pause')!.addEventListener('click', async (ev) => {
     const next = !o.paused;
-    if (!confirm(next ? 'Pause the challenge now? New visitors will not be able to start.' : 'Resume the challenge now?')) return;
+    if (!confirm(next ? 'Pause the challenge now? Visitors who have not started will not be able to play.' : 'Resume the challenge now?')) return;
     (ev.currentTarget as HTMLButtonElement).disabled = true;
     try { await call('spin_admin_set_paused', { p_paused: next }); } catch (e) { alert(errorText(e)); }
     renderControls();
