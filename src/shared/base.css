@@ -1,0 +1,108 @@
+/* Gulf Cryo brand tokens. Light, high contrast, for bright exhibition light. */
+:root {
+  --navy: #365888;
+  --black: #000000;
+  --grey: #909496;
+  --dark-grey: #5b5e61;
+  --light-grey: #e7ebef;
+  --white: #ffffff;
+  /* Answer feedback only, always with an icon and text. */
+  --ok: #1e7b45;
+  --bad: #b3261e;
+  --radius: 6px;
+  --font: "Museo Sans", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+
+/* Museo Sans: drop the licensed woff2 files into public/fonts and uncomment.
+@font-face { font-family: "Museo Sans"; src: url("/fonts/MuseoSans-300.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Museo Sans"; src: url("/fonts/MuseoSans-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Museo Sans"; src: url("/fonts/MuseoSans-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+*/
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--light-grey);
+  color: var(--black);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+h1, h2, h3 { color: var(--navy); line-height: 1.2; margin: 0 0 12px; font-weight: 700; }
+h1 { font-size: 26px; }
+h2 { font-size: 21px; }
+p { margin: 0 0 12px; }
+
+a { color: var(--navy); }
+
+button, input, select { font: inherit; color: inherit; }
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 20px;
+  border: 2px solid var(--navy);
+  border-radius: var(--radius);
+  background: var(--navy);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.55; cursor: default; transform: none; }
+.btn.secondary { background: var(--white); color: var(--navy); }
+.btn.small { min-height: 44px; font-size: 16px; padding: 8px 14px; width: auto; }
+.btn.danger { background: var(--white); color: var(--bad); border-color: var(--bad); }
+
+:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.btn:focus-visible { outline-color: var(--black); }
+
+.link-btn {
+  background: none;
+  border: 0;
+  padding: 8px 0;
+  color: var(--navy);
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.field { display: block; margin-bottom: 16px; }
+.field > span { display: block; font-weight: 700; margin-bottom: 6px; color: var(--black); }
+.field small { display: block; color: var(--dark-grey); font-weight: 400; }
+.field input, .field select {
+  width: 100%;
+  min-height: 50px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--grey);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-size: 17px;
+}
+.field input:focus, .field select:focus { border-color: var(--navy); outline: 2px solid var(--navy); outline-offset: 0; }
+.field .err { color: var(--bad); font-size: 15px; margin-top: 4px; display: block; }
+.field.invalid input, .field.invalid select { border-color: var(--bad); }
+
+.check { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; font-size: 15px; }
+.check input { width: 24px; height: 24px; margin: 1px 0 0; flex: none; accent-color: var(--navy); }
+
+.muted { color: var(--dark-grey); }
+.small { font-size: 15px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
