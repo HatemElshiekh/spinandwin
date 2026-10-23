@@ -1,0 +1,18 @@
+{
+  "name": "gulfcryo-spinandwin",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "questions": "node scripts/import-questions.mjs"
+  },
+  "devDependencies": {
+    "exceljs": "^4.4.0",
+    "pg": "^8.13.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}
