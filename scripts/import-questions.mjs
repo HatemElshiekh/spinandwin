@@ -9,7 +9,7 @@ import { writeFileSync } from 'node:fs';
 
 const HEADERS = ['question_id', 'wall', 'question', 'option_a', 'option_b', 'option_c', 'option_d',
   'correct_option', 'hint', 'active', 'notes', 'check'];
-const FORBIDDEN = [/\bexclusive\b/i, /\bnew\b/i, /for the first time/i, /guarantee/i, /—/];
+const FORBIDDEN = [/\bexclusive\b/i, /\bnew\b/i, /for the first time/i, /guarantee/i, /\u2014/];
 
 const [input, output = 'supabase/questions-import.sql'] = process.argv.slice(2);
 if (!input) {
